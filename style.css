@@ -1,0 +1,866 @@
+@font-face {
+    font-family: "Code Pro Black";
+    src: url("CodeProBlack.otf") format("opentype");
+    font-display: swap;
+}
+
+h1 {
+    font-family: "Code Pro Black", sans-serif;
+    color: #1e1e1e;
+    font-size: 20px;
+    padding-left: 60px;
+    position: relative;
+    top: -47px; /* OR bottom: 20px; */
+}
+
+img {
+    width: 35px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+p{
+    font-family: "Code Pro Black", sans-serif;
+    color: #1e1e1e;
+    text-align: center;
+    padding-top: 70px;
+    font-size: x-large;
+}
+
+input{
+    width: 30%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-family: "Code Pro Black", sans-serif;
+}
+
+body,
+input,
+button,
+select,
+textarea {
+    font-family: "Code Pro Black", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+.url-container {
+    position: relative;
+    width: 700px;
+    max-width: 90%;
+    margin: 30px auto;
+}
+
+#videoUrl {
+    width: 100%;
+    height: 50px;
+    padding: 0 45px 0 16px;
+    border: none;
+    border-radius: 0px;
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box;
+    border: 3px solid #1e1e1e;
+    font-family: "Code Pro Black", sans-serif;
+    color: #1e1e1e;
+}
+
+.clear-btn {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 24px;
+    height: 24px;
+
+    border: none;
+    background: transparent;
+
+    font-size: 20px;
+    color: #888;
+    cursor: pointer;
+
+    display: block;
+}
+
+.clear-btn:hover {
+    color: #ff3b30;
+}
+
+#analyzeBtn {
+
+    width: 200px;
+    height: 50px;
+
+    display: block;
+    margin: 20px auto;
+
+    border: none;
+    border-radius: 0px;
+    border: 3px solid #1e1e1e;
+
+    background: lawngreen;
+    color: #1e1e1e;
+
+    font-size: 18px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#analyzeBtn:hover {
+
+    background: #e53025;
+
+}
+
+.error-message {
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 15px;
+
+    padding: 12px;
+
+    border-radius: 0px;
+
+    /*background: rgba(255, 59, 48, 0.1);*/
+
+    color: #1e1e1e;
+
+    width: fit-content;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.error-video {
+
+    width: 35px;
+    height: 35px;
+
+    object-fit: cover;
+
+    border-radius: 0px;
+}
+
+/*
+.video-card {
+    display: none;
+    width: 900px;
+    max-width: 95%;
+    margin: 35px auto;
+    background: #1b1b1b;
+    border-radius: 18px;
+    padding: 20px;
+    gap: 25px;
+    align-items: center;
+   
+    border: 3px solid white;
+}
+
+.thumbnail-section img{
+
+    width:320px;
+    height:180px;
+
+    object-fit:cover;
+
+    border: radius 0px;
+    border: 3px solid white;
+}
+
+.video-details{
+
+    flex:1;
+
+}
+
+.video-details h2{
+
+    margin-bottom:20px;
+
+    color:white;
+
+    font-size:26px;
+
+}
+
+.detail{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:15px;
+
+}
+
+.label{
+
+    color:#8f8f8f;
+
+}
+
+.detail span:last-child{
+
+    color:white;
+
+}
+*/
+
+.video-card{
+
+    display:none;
+
+    width:900px;
+    max-width:95%;
+
+    margin:30px auto;
+
+    background:#1b1b1b;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    gap:25px;
+
+    align-items:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+
+}
+
+.video-thumbnail{
+
+    width:260px;
+
+    height:150px;
+
+    object-fit:cover;
+
+    border-radius:12px;
+
+    flex-shrink:0;
+
+}
+
+.video-content{
+
+    flex:1;
+
+}
+
+.video-content h2{
+
+    color:white;
+
+    font-size:28px;
+
+    margin-bottom:15px;
+
+}
+
+/*.video-channel{
+
+    color:#cfcfcf;
+
+    font-size:17px;
+
+    margin-bottom:25px;
+
+}
+
+.video-channel img {
+    width: 20px;  
+    height: 20px; 
+    border-radius: 0px; 
+    transform: translateY(5px);
+}
+
+#channelName {
+    margin-left: -50px; 
+}
+*/
+
+.video-channel {
+    color: #cfcfcf;
+    font-size: 17px;
+    margin-bottom: 25px;
+    
+    /* This aligns the icon and text horizontally */
+    display: flex;
+    align-items: center; 
+}
+
+.video-channel img {
+    width: 20px;
+    height: 20px;
+    margin-top: -8px;
+    /* Keeps the icon locked at the very start */
+}
+
+#channelName {
+    /* This pushes the text away from the icon to the right side */
+    margin-left: 10px; 
+}
+
+
+
+.video-meta{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+.meta-box{
+
+    background:#2b2b2b;
+
+    color:white;
+
+    padding:12px 18px;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+.meta-box img {
+    width: 20px;  /* Adjust this number to change the size */
+    height: 20px; /* Keeps the profile picture perfectly square */
+    border-radius: 0px; /* Optional: Makes the profile picture a circle */
+    transform: translateY(-5px);
+}
+
+.download-options{
+
+    display:none;
+
+    width:900px;
+    max-width:95%;
+
+    margin:30px auto;
+
+    background:#1b1b1b;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    /*box-shadow:0 10px 30px rgba(0,0,0,.35);*/
+
+}
+
+.download-options h2{
+
+    color:white;
+
+    margin-bottom:25px;
+
+}
+
+.option-group{
+
+    margin-bottom:25px;
+
+}
+
+.option-group label{
+
+    display:block;
+
+    color:#bdbdbd;
+
+    margin-bottom:10px;
+
+}
+
+.radio-group{
+
+    display:flex;
+
+    gap:30px;
+
+    color:white;
+
+}
+
+.radio-group label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+select{
+
+    width:100%;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:0px;
+
+    padding:0 15px;
+
+    font-size:15px;
+
+}
+
+.folder-box{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+#downloadFolder{
+
+    flex:1;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:0px;
+
+    padding:0 15px;
+
+}
+
+#browseBtn{
+
+    width:120px;
+
+    border:none;
+
+    border-radius:0px;
+
+    border: 3px solid #1e1e1e;
+
+    cursor:pointer;
+
+}
+
+#downloadBtn{
+
+    width:200px;
+
+    height:50px;
+
+    display:block;
+
+    margin:25px auto 0;
+
+    border:none;
+
+    border-radius:0px;
+
+    background:lawngreen;
+
+    color:#1b1b1b;
+
+    border: 3px solid #1e1e1e;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+}
+
+#downloadBtn:hover {
+
+    background: #e53025;
+
+}
+
+.download-type{
+
+    margin-bottom:30px;
+
+}
+
+.download-type h3{
+
+    color:white;
+
+    margin-bottom:20px;
+
+}
+
+.download-option{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:18px;
+
+    cursor:pointer;
+
+}
+
+.checkbox{
+
+    width:24px;
+
+    height:24px;
+
+    border:2px solid #888;
+
+    border-radius:  0px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.checkbox{
+
+    color:transparent;
+
+}
+
+.download-option.active .checkbox{
+
+    background:lawngreen;
+
+    border-color:lawngreen;
+
+    color:white;
+
+}
+
+.option-video{
+
+    width:40px;
+
+    height:40px;
+
+    object-fit:contain;
+
+}
+
+.download-option span{
+
+    color:white;
+
+    font-size:18px;
+
+    font-family:"Code Pro Black", sans-serif;
+
+}
+
+.progress-card{
+
+    display:none;
+
+    width:900px;
+    max-width:95%;
+
+    margin:30px auto;
+
+    background:#1b1b1b;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+
+}
+
+.progress-card h2{
+
+    color:white;
+
+    margin-bottom:20px;
+
+}
+
+/* Progress Track */
+
+.progress-track{
+
+    position:relative;
+
+    width:100%;
+
+    height:20px;
+
+    background:#333;
+
+    border-radius:0px;
+
+    overflow:hidden;
+
+    margin-bottom:15px;
+
+}
+
+/* Green Progress */
+
+.progress-fill{
+
+    width:0%;
+
+    height:100%;
+
+    background:#00c853;
+
+    border-radius:0px;
+
+    transition:width .2s linear;
+
+}
+
+/* Moving YouTube Logo */
+
+#youtubeLogo{
+
+    position:absolute;
+
+    left:0;
+
+    top:50%;
+
+    width:34px;
+
+    height:34px;
+
+    transform:translate(-50%, -50%);
+
+    margin-top: -5px;
+
+    transition:left .2s linear, opacity .3s ease;
+
+    z-index:10;
+
+}
+
+/* Checkmark after completion */
+
+.progress-check{
+
+    position:absolute;
+
+    right:8px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:#00c853;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    opacity:0;
+
+    transition:opacity .3s ease;
+
+}
+
+/* Progress Percentage */
+
+#progressPercent{
+
+    color:white;
+
+    text-align:right;
+
+    margin-bottom:25px;
+
+}
+
+/* Download Info */
+
+.progress-info{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+    margin-bottom:25px;
+
+}
+
+.progress-info strong{
+
+    display:block;
+
+    color:#9e9e9e;
+
+    margin-bottom:5px;
+
+}
+
+.progress-info span{
+
+    color:white;
+
+}
+
+/* Buttons */
+
+.progress-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+}
+
+.progress-buttons button{
+
+    width:140px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:0px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+}
+
+/* ===========================
+   Skeleton Loader
+=========================== */
+
+.loading-card{
+
+    display:none;
+
+    width:900px;
+    max-width:95%;
+
+    margin:30px auto;
+
+    background:#1b1b1b;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    gap:20px;
+
+    align-items:flex-start;
+
+}
+
+.loading-thumbnail{
+
+    width:260px;
+
+    height:145px;
+
+    border-radius:12px;
+
+}
+
+.loading-details{
+
+    flex:1;
+
+}
+
+.line{
+
+    height:20px;
+
+    border-radius:8px;
+
+    margin-bottom:18px;
+
+}
+
+.title{
+
+    width:80%;
+
+    height:28px;
+
+}
+
+.short{
+
+    width:40%;
+
+}
+
+.skeleton{
+
+    background:linear-gradient(
+        90deg,
+        #2d2d2d 25%,
+        #3c3c3c 50%,
+        #2d2d2d 75%
+    );
+
+    background-size:200% 100%;
+
+    animation:loading 1.2s infinite;
+}
+
+@keyframes loading{
+
+    from{
+        background-position:200% 0;
+    }
+
+    to{
+        background-position:-200% 0;
+    }
+
+}

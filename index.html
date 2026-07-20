@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+     <img src="TubeDrop.png" alt="TubeDrop">
+     <h1>TubeDrop</h1>
+     <p>Paste YouTube URL</p>
+     <div class="url-container">
+     <input type="text"
+            id="videoUrl"
+            placeholder="Paste YouTube URL here...">
+     <button type="button" id="clearBtn" class="clear-btn">&times;</button>
+     </div>
+     
+     <button id="analyzeBtn">Analyze Video</button>
+
+     <div id="errorMessage" class="error-message">
+
+     <video
+        class="error-video"
+        autoplay
+        muted
+        loop
+        playsinline>
+
+        <source src="warning.mp4" type="video/mp4">
+
+     </video>
+
+     <span>Please enter a YouTube video URL.</span>
+
+     </div>
+
+     <div id="loadingCard" class="loading-card">
+
+    <div class="loading-thumbnail skeleton"></div>
+
+    <div class="loading-details">
+
+        <div class="skeleton line title"></div>
+        <div class="skeleton line"></div>
+        <div class="skeleton line short"></div>
+        <div class="skeleton line"></div>
+
+    </div>
+
+</div>
+
+      <div id="videoCard" class="video-card">
+
+    <img
+        id="thumbnail"
+        class="video-thumbnail"
+        src="assets/images/TubeDrop.png"
+        alt="Thumbnail">
+
+    <div class="video-content">
+
+        <h2 id="videoTitle">Video Title</h2>
+
+        <p class="video-channel">
+            <img src="profilepic.png">
+             <span id="channelName">Channel Name</span>
+        </p>
+
+        <div class="video-meta">
+
+            <div class="meta-box">
+                <img src="timer.png">
+                <span id="duration">00:00</span>
+            </div>
+
+            <div class="meta-box">
+                <img src="quality.png">
+                <span id="resolution">1080p</span>
+            </div>
+
+            <div class="meta-box">
+                <img src="downloadsize.png">
+                <span id="fileSize">0 MB</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!--
+    <div class="video-details">
+
+        <h2 id="videoTitle">Loading...</h2>
+
+        <div class="detail">
+            <span class="label">Channel</span>
+            <span id="channelName">Loading...</span>
+        </div>
+
+        <div class="detail">
+            <span class="label">Duration</span>
+            <span id="duration">Loading...</span>
+        </div>
+
+        <div class="detail">
+            <span class="label">Resolution</span>
+            <span id="resolution">Loading...</span>
+        </div>
+
+        <div class="detail">
+            <span class="label">File Size</span>
+            <span id="fileSize">Loading...</span>
+        </div>
+
+    </div>
+
+</div>
+
+-->
+
+<div id="downloadOptions" class="download-options">
+
+    <h2>Download Options</h2>
+
+    <!-- Download Type -->
+<div class="download-type">
+
+    <h3>Download Type</h3>
+
+    <div class="download-option active" id="videoOption">
+
+        <div class="checkbox">
+            ✔️
+        </div>
+
+        <span>Video</span>
+
+    </div>
+
+    <div class="download-option" id="audioOption">
+
+        <div class="checkbox">
+            ✔️
+        </div>
+
+        <span>Audio</span>
+
+    </div>
+
+</div>
+
+    <!-- Quality -->
+    <div class="option-group">
+        <label for="quality">Quality</label>
+
+        <select id="quality">
+            <option>2160p</option>
+            <option>1440p</option>
+            <option>1080p</option>
+            <option>720p</option>
+            <option>480p</option>
+            <option>360p</option>
+            <option>Audio Only</option>
+        </select>
+    </div>
+
+    <!-- Download Folder -->
+    <div class="option-group">
+
+        <label>Download Folder</label>
+
+        <div class="folder-box">
+
+            <input
+                  type="text"
+                  id="downloadFolder"
+                  placeholder="Select a download folder..."
+                  readonly>
+
+            <button id="browseBtn">
+                Browse
+            </button>
+
+        </div>
+
+    </div>
+
+    <button id="downloadBtn">
+        Download
+    </button>
+
+</div>
+
+<div id="progressCard" class="progress-card">
+
+    <h2>Downloading...</h2>
+
+  <div class="progress-track">
+
+    <!-- Green Progress -->
+    <div id="progressFill" class="progress-fill"></div>
+
+    <!-- Moving YouTube Logo -->
+    <img
+        id="youtubeLogo"
+        src="TubeDrop.png"
+        alt="YouTube Logo">
+
+    <!-- Checkmark after completion -->
+    <div id="progressCheck" class="progress-check">
+        ✓
+    </div>
+
+</div>
+
+    <p id="progressPercent">0%</p>
+
+    <div class="progress-info">
+
+        <div>
+            <strong>Downloaded</strong>
+            <span id="downloadedSize">0 MB / 0 MB</span>
+        </div>
+
+        <div>
+            <strong>Speed</strong>
+            <span id="downloadSpeed">0 MB/s</span>
+        </div>
+
+        <div>
+            <strong>Time Left</strong>
+            <span id="timeLeft">--:--</span>
+        </div>
+
+    </div>
+
+    <div class="progress-buttons">
+
+        <!--<button id="pauseBtn">Pause</button>
+
+        <button id="cancelBtn">Cancel</button>-->
+
+    </div>
+
+</div>
+
+     <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TubeDrop</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>TubeDrop</h1>
+
+        <input
+            type="text"
+            id="videoUrl"
+            placeholder="Paste media URL here..."
+        >
+
+        <button id="analyzeBtn">
+            Analyze
+        </button>
+
+        <p id="errorMessage"></p>
+
+        <div id="videoCard" style="display:none;">
+
+            <img
+                id="thumbnail"
+                src=""
+                alt="Thumbnail"
+            >
+
+            <h2 id="title"></h2>
+
+            <p><strong>Duration:</strong> <span id="duration"></span></p>
+
+            <p><strong>Channel:</strong> <span id="channel"></span></p>
+
+            <p><strong>Available Qualities:</strong> <span id="qualities"></span></p>
+
+            <p><strong>Estimated Size:</strong> <span id="size"></span></p>
+
+        </div>
+
+    </div>
+
+    <script src="popup.js"></script>
+
+</body>
+</html>
