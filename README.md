@@ -89,5 +89,4 @@ Windows environment.
 - Duplicate `server/package.json` / `server/package-lock.json` — merged
   into the single root `package.json`.
 
-![Hits](https://hits.sh)
-
+![Visitor Count](https://visitor-badge.laobi.icu/badge?page_id=harshtelangework-work.TubeDrop)
