@@ -89,4 +89,5 @@ Windows environment.
 - Duplicate `server/package.json` / `server/package-lock.json` — merged
   into the single root `package.json`.
 
-[![Hits](https://hitscounter.dev)](https://hitscounter.dev)
+![Hits](https://hits.sh)
+
