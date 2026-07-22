@@ -88,3 +88,5 @@ Windows environment.
   `warning.mp4` is referenced by `index.html`).
 - Duplicate `server/package.json` / `server/package-lock.json` — merged
   into the single root `package.json`.
+
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fharshtelangework-work%2FTubeDrop&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
