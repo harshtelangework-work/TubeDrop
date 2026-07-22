@@ -1,3 +1,5 @@
+![Visitor Count](https://visitor-badge.laobi.icu/badge?page_id=harshtelangework-work.TubeDrop)
+
 # TubeDrop
 
 Electron desktop app for downloading YouTube videos with automatic
@@ -88,5 +90,3 @@ Windows environment.
   `warning.mp4` is referenced by `index.html`).
 - Duplicate `server/package.json` / `server/package-lock.json` — merged
   into the single root `package.json`.
-
-![Visitor Count](https://visitor-badge.laobi.icu/badge?page_id=harshtelangework-work.TubeDrop)
